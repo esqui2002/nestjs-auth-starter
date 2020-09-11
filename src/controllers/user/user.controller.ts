@@ -13,7 +13,7 @@ export class UsersController {
     @UseGuards(AuthGuard('jwt'))
     async getMe(
         @GetUser() user: User
-    ){
+    ): Promise<User>{
         delete user.password;
         return user;
     }
